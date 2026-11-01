@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X & O Neural Network</title>
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+
+   
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>X and O Recognition</h1>
+        <p>Neural Network Detection System</p>
+    </header>
+
+    <div class="status" id="status">
+        Loading Neural Network...
+    </div>
+
+    <div class="main">
+
+        <!-- Drawing Section -->
+
+        <section class="draw-section">
+
+            <h2>Draw X or O</h2>
+
+            <canvas id="canvas" width="280" height="280"></canvas>
+
+            <div class="buttons">
+
+                <button class="clear" id="clearBtn">
+                    Clear
+                </button>
+
+                <button class="recognize" id="recognizeBtn" disabled>
+                    Recognize
+                </button>
+
+            </div>
+
+            <button class="train" id="trainBtn">
+                Train Neural Network
+            </button>
+
+        </section>
+
+
+        <!-- Result Section -->
+
+        <section class="result-section">
+
+            <h2>Detection Result</h2>
+
+            <div class="result">
+
+                <h3 id="prediction">?</h3>
+
+                <p id="message">
+                    Draw a symbol to recognize it.
+                </p>
+
+            </div>
+
+            <div class="info">
+                <span>Network Status</span>
+                <strong id="networkStatus">Loading</strong>
+            </div>
+
+            <div class="info">
+                <span>Missing Data</span>
+                <strong id="missing">Not Checked</strong>
+            </div>
+
+            <div class="info">
+                <span>Mistaken Data</span>
+                <strong id="mistaken">Not Checked</strong>
+            </div>
+
+            <div class="confidence">
+
+                <div class="info">
+                    <span>Match Percentage</span>
+                    <strong id="confidence">0%</strong>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <div class="description">
+
+        <strong>How does it work?</strong>
+
+        <p>
+            1. Draw X or O on the drawing area.
+            <br>
+            2. The neural network analyzes the drawing.
+            <br>
+            3. It predicts whether the symbol is X or O.
+            <br>
+            4. It checks for missing or invalid data.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
